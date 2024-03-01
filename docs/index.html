@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+    <div id="lightningout"></div>
+    <p>CRMA Dashboard Lightning Out POC</p>
+
+    <script src="https://assuredpartners2022--apsfdev.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+    <script>
+        const accessToken = '00D8B0000008gkx!AQEAQNnNCpXNefvYppZMHsqD5DYpJeuLjaQo8DUuk4yP1J7320aZZfx2ShMYQrnqS8jx5Cv_HhGgakTF6POsMqaEPBEj7i1j';
+        const url = 'https://assuredpartners2022--apsfdev.sandbox.my.site.com/';
+
+        $Lightning.use(
+            "wave:waveApp", 
+            function() {  
+                $Lightning.createComponent(
+                    "wave:waveDashboard", 
+                    {    
+                        dashboardId: "0FK8B0000000NEHWA2",
+                        accessToken: accessToken 
+                    }, 
+                    "lightningout"
+                );
+            }, 
+            url, 
+            accessToken
+        )
+    </script>
+  </body>
+</html>
