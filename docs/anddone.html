@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://paymentwidget.uat.anddone.com/andDone.js"></script>
+    </head>
+    <body>
+        <div payment-container></div>
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const token = urlParams.get('token');
+            console.log('Token: ' + token);
+
+            console.log('Getting andDone object');
+            let pluginOption ={
+                theme : "classic", // classic, modern, minimal, vibrant
+            }
+            let andDone = new AndDone(token, pluginOption);
+            console.log('AndDone object created');
+            console.log(andDone);
+            
+            for (let key in andDone) {
+                console.log(key);
+                console.log(andDone[key]);
+            }
+        </script>
+    </body>
+</html>
